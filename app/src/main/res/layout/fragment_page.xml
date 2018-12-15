@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+	<TextView
+			android:id="@+id/tv_year_header"
+			android:layout_width="wrap_content"
+			android:textColor="#fff"
+			android:textSize="22sp"
+			android:layout_gravity="center"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+			app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="8dp"
+			app:layout_constraintTop_toTopOf="parent"/>
+
+	<TableLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			app:layout_constraintTop_toBottomOf="@+id/tv_year_header"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+			app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.046">
+
+		<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="72dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp">
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Jan"/>
+
+
+				<TextView
+						android:id="@+id/tv_jan_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:text="45 c"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_jan_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:text="56 c"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_jan_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:text="155 mm"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+
+			</LinearLayout>
+
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Feb"/>
+
+				<TextView
+						android:id="@+id/tv_feb_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_feb_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+
+				<TextView
+						android:id="@+id/tv_feb_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Mar"/>
+
+
+				<TextView
+						android:id="@+id/tv_mar_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_mar_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_mar_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Apr"/>
+
+				<TextView
+						android:id="@+id/tv_apr_max_temp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"/>
+
+				<TextView
+						android:id="@+id/tv_apr_min_temp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"/>
+
+				<TextView
+						android:id="@+id/tv_apr_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+		</TableRow>
+
+		<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="72dp"
+				android:layout_marginTop="32dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp">
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="May"/>
+
+
+				<TextView
+						android:id="@+id/tv_may_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_may_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_may_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+
+			</LinearLayout>
+
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Jun"/>
+
+				<TextView
+						android:id="@+id/tv_jun_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_jun_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_jun_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Jul"/>
+
+
+				<TextView
+						android:id="@+id/tv_jul_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_jul_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_jul_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Aug"/>
+
+				<TextView
+						android:id="@+id/tv_aug_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_aug_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_aug_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+		</TableRow>
+
+
+		<TableRow
+				android:layout_width="match_parent"
+				android:layout_height="72dp"
+				android:layout_marginTop="32dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginEnd="16dp">
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Sept"/>
+
+
+				<TextView
+						android:id="@+id/tv_sept_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_sept_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_sept_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+
+			</LinearLayout>
+
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Oct"/>
+
+				<TextView
+						android:id="@+id/tv_oct_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_oct_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_oct_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Nov"/>
+
+
+				<TextView
+						android:id="@+id/tv_nov_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_nov_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_nov_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:gravity="center"
+					android:layout_weight="1">
+
+				<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="#fff"
+						android:textSize="16sp"
+						android:text="Dec"/>
+
+				<TextView
+						android:id="@+id/tv_dec_max_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_upward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+				<TextView
+						android:id="@+id/tv_dec_min_temp"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_arrow_downward_white_24dp"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+
+				<TextView
+						android:id="@+id/tv_dec_rain"
+						android:layout_width="wrap_content"
+						android:textColor="#f5f5f5"
+						android:drawableStart="@drawable/ic_rain"
+						android:drawablePadding="4dp"
+						android:textSize="14sp"
+						android:layout_marginTop="8dp"
+						android:layout_height="wrap_content"/>
+
+			</LinearLayout>
+		</TableRow>
+
+	</TableLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
