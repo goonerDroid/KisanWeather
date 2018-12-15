@@ -32,7 +32,8 @@ import java.util.*;
 /**
  * Created by william on 11-12-2018.
  */
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener,
+        ViewPager.OnPageChangeListener,StepView.OnStepClickListener {
 
 
     @BindView(R.id.countries_spinner)
@@ -52,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     ViewModelProvider.Factory viewModelFactory;
 
     int[] bgImages = new int[]{R.drawable.img_uk, R.drawable.img_england, R.drawable.img_scotland, R.drawable.img_wales};
-    private WeatherViewModel weatherViewModel;
-    private ArrayAdapter<String> countriesDataAdapter;
     private WeatherPagerAdapter adapterViewPager;
     private List<Integer> orderedYearList;
     private List<WeatherModel> minTempWeatherModelList = new ArrayList<>();
@@ -70,6 +69,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ButterKnife.bind(this);
         loadSpinner();
         loadWeatherPager();
+        loadStepViewData();
+    }
+
+    private void loadStepViewData() {
+        stepView.getState()
+                .steps(new ArrayList<String>() {{
+                    add("2000s");
+                    add("1980s");
+                    add("1950s");
+                    add("Early Time");
+                }})
+                .stepsNumber(4)
+                .commit();
     }
 
     @Override
@@ -91,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         countriesList.add("Scotland");
         countriesList.add("Wales");
 
-        countriesDataAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, countriesList);
+        ArrayAdapter<String> countriesDataAdapter = new ArrayAdapter<>(this, R.layout.spinner_item, countriesList);
         countriesDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         countrySpinner.setAdapter(countriesDataAdapter);
@@ -99,62 +111,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         countrySpinner.setOnItemSelectedListener(this);
 
         blurBackground();
-
-
-        stepView.getState()
-                .steps(new ArrayList<String>() {{
-                    add("2000s");
-                    add("1980s");
-                    add("1950s");
-                    add("Early Time");
-                }})
-                .stepsNumber(4)
-                .commit();
-        weatherPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int i, float v, int i1) {
-
-            }
-
-            @Override
-            public void onPageSelected(int i) {
-                if ( i < 18 ){
-                    stepView.go(0,true);
-                }else if (i >18  && i < 31){
-                    stepView.go(1, true);
-                }if (i > 58 && i < 100){
-                    stepView.go(2,true);
-                }else if (i > 100){
-                    stepView.go(3,true);
-                }
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int i) {
-
-            }
-        });
-
-
-        stepView.setOnStepClickListener(step -> {
-            if (step == 0){
-                weatherPager.setCurrentItem(9);
-            }else if (step == 1){
-                weatherPager.setCurrentItem(31);
-            }else if (step == 2){
-                weatherPager.setCurrentItem(59);
-            }else if (step == 3){
-                weatherPager.setCurrentItem(99);
-            }
-
-
-            stepView.go(step,true);
-        });
-
+        weatherPager.addOnPageChangeListener(this);
+        stepView.setOnStepClickListener(this);
     }
 
     private void getWeather(String locationName) {
-        weatherViewModel = ViewModelProviders.of(this, viewModelFactory).get(WeatherViewModel.class);
+        WeatherViewModel weatherViewModel = ViewModelProviders.of(this, viewModelFactory).get(WeatherViewModel.class);
         weatherViewModel.setRequestData(locationName);
         WeatherPageModel weatherPageModel = new WeatherPageModel();
         weatherViewModel.getMaxTempObservable().observe(this, weatherModelList -> {
@@ -228,5 +190,44 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
+    }
+
+    @Override
+    public void onPageScrolled(int i, float v, int i1) {
+        //Not used
+    }
+
+    @Override
+    public void onPageSelected(int i) {
+        if ( i < 18 ){
+            stepView.go(0,true);
+        }else if (i >18  && i < 31){
+            stepView.go(1, true);
+        }if (i > 58 && i < 100){
+            stepView.go(2,true);
+        }else if (i > 100){
+            stepView.go(3,true);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int i) {
+        //Not used
+    }
+
+    @Override
+    public void onStepClick(int step) {
+        if (step == 0){
+            weatherPager.setCurrentItem(9);
+        }else if (step == 1){
+            weatherPager.setCurrentItem(31);
+        }else if (step == 2){
+            weatherPager.setCurrentItem(59);
+        }else if (step == 3){
+            weatherPager.setCurrentItem(99);
+        }
+
+
+        stepView.go(step,true);
     }
 }
